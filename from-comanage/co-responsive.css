@@ -1,0 +1,630 @@
+/**
+ * COmanage Registry Responsive Style Sheet
+ *
+ * Portions licensed to the University Corporation for Advanced Internet
+ * Development, Inc. ("UCAID") under one or more contributor license agreements.
+ * See the NOTICE file distributed with this work for additional information
+ * regarding copyright ownership.
+ *
+ * UCAID licenses this file to you under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at:
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @link          http://www.internet2.edu/comanage COmanage Project
+ * @package       registry
+ * @since         COmanage Registry v1.1
+ * @license       Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+ */
+
+/* Reponsive breakpoints for the COmanage theme are set to 360, 480, 576, 768, 992, 1024, 1200px.
+   These breakpoints are based on Bootstrap 4's normal grid breakpoints.
+   This is a mobile-first theme.  General and 320 mobile portrait styles are in co-base.css */
+
+/* LARGE PHONE PORTRAIT */
+/**************************************************************************************************************/
+/* Larger phones (e.g. Samsung Galaxy) in portrait mode */
+@media only screen and (min-width: 360px) {
+  #notifications {
+    margin-right: 4px;
+  }
+
+  #user-panel {
+    max-width: 100%;
+  }
+
+  .co-info-topbox {
+    word-wrap: break-word;
+  }
+
+  .field-data-container {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "value value value value value value value value value action"
+      "label label label label label label label label label action"
+      "collapse-info collapse-info collapse-info collapse-info collapse-info collapse-info collapse-info collapse-info collapse-info collapse-info";
+  }
+  #content.with-sidebar {
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr);
+    grid-template-rows: minmax(500px, 1fr) auto;
+  }
+  .field-data-container .field-children {
+    grid-area: collapse-info;
+  }
+  .card-data-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+    grid-auto-rows: min-content;
+    grid-auto-flow: dense;
+    grid-gap: 2em;
+    padding-right: 0.5em !important;
+    padding-left: 0.5em !important;
+  }
+  /* Filter block */
+  #filter-block-qaxsbar li {
+    overflow-wrap: unset;
+    flex: 1;
+  }
+  #filter-block-qaxsbar ul {
+    justify-content: center;
+  }
+}
+
+/* PHONE LANDSCAPE */
+/**************************************************************************************************************/
+/* Small phones in landscape mode  */
+@media only screen and (min-width: 480px) {
+  #notifications {
+    margin-right: 12px;
+  }
+}
+
+/* SMALL */
+/**************************************************************************************************************/
+/* Very small devices (tablets, landscape phones 576px and up) */
+@media only screen and (min-width: 576px) {
+  h1 {
+    font-size: 2.6em;
+  }
+  h2 {
+    font-size: 2em;
+    line-height: 2em;
+  }
+  #logout {
+    display: block;
+    color: white;
+  }
+  #global-search-box #CoDashboardQ {
+    font-size: 14px;
+  }
+  #user-common-name {
+    display: inline;
+    position: relative;
+    top: -1px;
+  }
+  #user-panel {
+    min-width: 400px;
+    max-width: unset;
+  }
+  #user-panel-user-info {
+    border-top: none;
+    margin: 0 80px 0 0;
+    padding-top: 0;
+  }
+  #logout-in-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  #siteTitle {
+    min-height: 46px;
+    font-size: 2.4em;
+    line-height: 1.6em;
+  }
+  #logo {
+    width: auto;
+    right: 2em;
+    margin-top: 4px;
+  }
+  #notifications li.notification:nth-child(n+4) { /* show all notifications on tablets (and larger) */
+    display: block;
+  }
+  #content {
+    padding: 1.75em;
+  }
+  .field-data-container {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: unset;
+    grid-template-areas:
+    "value value value label label action"
+    "collapse-info collapse-info collapse-info collapse-info collapse-info collapse-info";
+  }
+  /* CO PEOPLE */
+  #co_people .rolestatus {
+    float: right !important;
+    margin: 5px 9px 5px 5px;
+    padding: 0;
+    background-color: transparent;
+    color: #222;
+  }
+  #co_people .roleTitleLinks {
+    margin: 0 1em 0 0;
+    float: none;
+  }
+  #co_people .roleinfo {
+    margin: 0;
+  }
+  #co_people .person-admin button {
+    display: inline;
+  }
+  ul.form-list li.field-flex {
+    display: flex;
+    align-items: center;
+  }
+  ul.form-list .field-name {
+    display: inline-block;
+    min-width: 80px;
+    vertical-align: middle;
+    width: 30%;
+    padding-left: 0.5em;
+  }
+  ul.form-list .field-info {
+    display: inline-block;
+    width: 65%;
+    overflow-wrap: anywhere;
+  }
+  ul.form-list .field-info-flex {
+    display: inline-flex;
+    align-items: center;
+  }
+  ul.form-list-admin .field-name {
+    width: 50%;
+    padding-right: 1em;
+  }
+  ul.form-list-admin .field-info {
+    width: 40%;
+  }
+  ul.form-list input[type="text"],
+  ul.form-list input[type="number"],
+  ul.form-list input[type="password"] {
+    width: 97%;
+  }
+  ul.form-list .field-info-flex input[type="text"],
+  ul.form-list .field-info-flex input[type="number"],
+  ul.form-list .field-info-flex input[type="password"],
+  ul.form-list .field-info-flex textarea {
+    width: auto;
+    flex-grow: 1;
+  }
+  ul.form-list li.field-stack textarea {
+    margin: 0.5em 0 0.5em 0.5em;
+  }
+  /* ORG IDS */
+  body.org_identities.edit ul.form-list .field-name {
+    padding-left: 0.75em;
+  }
+  /* PETITIONS */
+  body.view .modelbox .boxtitle {
+    margin-right: 2em;
+  }
+  body.view .modelbox .modelbox-data {
+    margin-top: 0.5em;
+    width: 65%;
+  }
+  #petition .field-name-status {
+    float: left;
+  }
+  /* PETITION ATTRIBUTES */
+  .modelbox .boxtitle {
+    padding: 0 0 0.5em;
+  }
+  .modelbox-data-label {
+    width: 120px;
+  }
+  #ui-datepicker-div {
+    left: 30% !important;
+  }
+  /* MATCHABLE INFO BOX */
+  .co-info-matchable {
+    float: right;
+    width: 70%;
+  }
+  /* SEARCH PAGE */
+  #search input#CoDashboardQ {
+    width: 300px;
+    font-size: 14px;
+  }
+  /* PAGINATION */
+  #pagination {
+    text-align: left;
+    min-height: 2.5em;
+  }
+  #pagination .paginationCounter {
+    float: right;
+    margin-right: 0.5em;
+  }
+  #pagination.with-pagination-elements .paginationCounter {
+    margin-top: 2px;
+  }
+}
+
+/* MEDIUM - Primary breakpoint */
+/**************************************************************************************************************/
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .mfp-ajax-holder .mfp-content {
+    width: 60em;
+  }
+  /* CONTENT LAYOUT */
+  #main-wrapper {
+    display: flex;
+  }
+  #main {
+    flex-basis: 100%;
+    padding-bottom: 66px; /* offset for footer logo height */
+  }
+  #navigation-drawer {
+    position: static;
+    display: block;
+    top: unset;
+    z-index: unset;
+    width: 180px;
+    min-width: 180px;
+    min-height: calc(100vh - 94px); /* offset for header height */
+  }
+  /* menu drawer half-closed styles */
+  #navigation-drawer.half-closed {
+    width: 52px;
+    min-width: 0;
+    transition: width 0.1s ease;
+  }
+  #main.drawer-half-closed {
+    transition: margin 0.1s ease;
+  }
+  #navigation-drawer.half-closed .menuTitle,
+  #navigation-drawer.half-closed .arrow {
+    display: none;
+  }
+  /* HEADER */
+  #banner {
+    position: relative;
+    z-index: 8;
+  }
+  #user-menu {
+    z-index: 30;
+  }
+  #user-menu a.topMenu {
+    color: white;
+  }
+  body.title-hidden #user-menu a.topMenu {
+    color: #222;
+  }
+  #notifications #notifications-menu {
+    width: 400px;
+  }
+  /* USER DEFINED LINKS (top) */
+  #user-defined-links-left {
+    display: none;
+  }
+  #user-defined-links-top  {
+    display: inline-block;
+    background-color: #222;
+    color: white;
+  }
+  #user-defined-links-top .custom-links li {
+    display: inline-block;
+  }
+  #user-defined-links-top .custom-links a {
+    color: white;
+  }
+  /* USER MENU */
+  #global-search-box {
+    right: 200px;
+  }
+  /* RIGHT SIDEBAR */
+  .sidebar {
+    background-color: #fafafa;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 10px;
+    padding-bottom: 2em;
+    min-height: 100%;
+    position: absolute;
+    right: 0;
+    width: 247px;
+  }
+  #topLinks {  /* content links */
+    float: right;
+    margin: 1.5em 0 0 0;
+  }
+  #collaborationTitle {
+    min-height: 46px;
+    font-size: 2.4em;
+    line-height: 1.6em;
+    padding-right: 240px;
+  }
+  .co-grid .co-grid-header {
+    display: flex;
+    background-color: #0c75c0 !important;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  .side-search {
+    margin: 2em 1em;
+  }
+  /* REDIRECT PAGE */
+  #redirect-box {
+    margin: 4em auto;
+    padding: 2em 2em 1.5em;
+    width: 320px;
+  }
+  body.ui-mode-basic #redirect-box {
+    left: unset;
+  }
+  /********************************/
+  /* My Population - People Index */
+  /********************************/
+  /* Listing sorter */
+  #sorter {
+    float: right;
+    margin-top: -1.5em;
+    padding-bottom: 0.5em;
+  }
+  .co-info-topbox + #sorter {
+    margin-top: 0;
+  }
+  /* Listing controls */
+  .listControl li {
+    margin-left: 0.5em;
+  }
+  #peopleToggle {
+    display: block;
+  }
+  /* Top search / filters */
+  #top-search-fields-subgroups {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
+    padding: 0 0.5em;
+  }
+  #top-search-submit.tss-rebalance {
+    margin-top: -3.5em;
+    position: relative;
+  }
+  /* PEOPLE LISTING */
+  /* Reset table for desktop */
+  #co-people-index thead {
+    display: table-header-group;
+  }
+  #co-people-index th {
+    padding: 0.5em 1em;
+  }
+  #co-people-index td,
+  #co-people-index td.person-name,
+  #co-people-index td.person-role,
+  #co-people-index td.actions {
+    display: table-cell;
+    padding: 0.75em 1em;
+    vertical-align: top;
+  }
+  #co_people .person-info-inner {
+    float: left;
+    width: 200px;
+  }
+  #co_people .person-status {
+    float: left;
+    width: 100px;
+  }
+  /* PERSON and ORGID CANVAS*/
+  .personExplorer ul ul {
+    margin-left: 1em;
+  }
+  /* Filter Block*/
+  #filter-block-qaxsbar li {
+    overflow-wrap: wrap;
+    flex: unset;
+  }
+  #filter-block-qaxsbar ul {
+    justify-content: unset;
+  }
+  /* PETITION ATTRIBUTES */
+  .modelbox {
+    margin: 0 0 1em 1em;
+  }
+  body.petitionerAttributes .modelbox,
+  body.co_people.invite .modelbox {
+    margin: 0 0.5em 1.5em 0;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+  }
+  body.petitionerAttributes .modelbox.hidden {
+    display: none;
+  }
+  /* GROUPS */
+  #group-members-select-title {
+    clear: none;
+    float: left;
+  }
+  #group-add-member-search {
+    margin: 1em 0 0;
+  }
+  #group-add-member-search label {
+    margin-right: 0.25em;
+  }
+  #group-add-member {
+    width: 300px;
+  }
+  /* DASHBOARDS and WIDGETS */
+  /* Service Portal */
+  .co-services {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+  }
+  .co-card {
+    margin: 0 1.25em 1.25em 0;
+    padding: 0.75em 1.25em 4em 1.25em;
+    min-width: 0;
+    width: 180px;
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(245,245,245,1);
+    -moz-box-shadow: 1px 1px 1px 0px rgba(245,245,245,1);
+    box-shadow: 1px 1px 1px 0px rgba(245,245,245,1);
+  }
+  .co-dept ul.form-list .field-title {
+    font-weight: normal;
+  }
+  .co-card img {
+    float: right;
+    min-width: 50%;
+    max-width: 50%;
+    margin: 0 0 0.5em 0.5em;
+  }
+  .co-card .co-card-icons {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    float: none;
+  }
+  .co-card-join-button {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+  }
+  /* Announcements Widget */
+  .widget-list li {
+    padding: 1.25em 1.5em;
+    margin: 0 0.25em 1.25em 0;
+    border: 1px solid #eee;
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(245,245,245,1);
+    -moz-box-shadow: 1px 1px 1px 0px rgba(245,245,245,1);
+    box-shadow: 1px 1px 1px 0px rgba(245,245,245,1);
+  }
+  .widget-list .announcement-title {
+    float: left;
+  }
+  .widget-list .announcement-meta {
+    float: right;
+  }
+  .widget-list .announcement-body {
+    clear: both;
+  }
+  .widget-actions {
+    margin: -2.5em 0.5em 1em 0;
+    float: right;
+  }
+  .widget-actions li {
+    margin-left: 1em;
+  }
+  /* GENERAL */
+  .submit-buttons {
+    margin-right: 0.5em;
+  }
+  .two-col {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 20px; /* Firefox */
+    column-gap: 20px;
+  }
+  .three-col {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+    -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 20px; /* Firefox */
+    column-gap: 20px;
+  }
+  /* FOOTER */
+  #co-footer,
+  body.co_petitions.petitionerAttributes.logged-out #co-footer {
+    position: static;
+    float: right;
+    padding: 0;
+    margin-top: -66px;
+    right: unset;
+    bottom: unset;
+    left: unset;
+    transform: unset;
+  }
+  .poweredByComanage {
+    display: inline-block;
+    padding: 1em 2em 2em 0;
+  }
+  body.logged-out #co-footer,
+  body.redirect #co-footer,
+  body.pages #co-footer {
+    position: fixed;
+    float: none;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    left: unset;
+    transform: unset;
+  }
+}
+
+/* LARGE */
+/**************************************************************************************************************/
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  #navigation-drawer {
+    width: 200px;
+    min-width: 200px;
+  }
+  #content.with-sidebar {
+    display: grid;
+    grid-template-columns: minmax(320px, 3fr) 1fr;
+  }
+  #co_people .person-info-inner {
+    width: 250px;
+  }
+  #co_people .person-status {
+    width: auto;
+  }
+  #right-sidebar {
+    margin-left: 1.5em;
+  }
+  #right-sidebar #menu {
+    padding-left: 1em;
+  }
+}
+
+/* EXTRA LARGE */
+/**************************************************************************************************************/
+/* Extra large devices (desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #navigation-drawer {
+    width: 240px;
+    min-width: 240px;
+  }
+  #co_people .person-info-inner {
+    width: 550px;
+  }
+  #group-add-member-search-container {
+    float: right;
+    margin-top: -3em;
+  }
+  main.drawer-half-closed #group-add-member {
+    width: 500px;
+  }
+}
+
+@media only screen and (min-width: 1350px) {
+  #group-add-member {
+    width: 500px;
+  }
+}

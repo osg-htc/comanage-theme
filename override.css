@@ -1,0 +1,39 @@
+/* DO NOT EDIT DIRECTLY - All Edits should be made to https://github.com/osg-htc/comanage-theme and copied over */
+
+/* Overrides co-color.css */
+:root {
+    --cmg-color-blue-primary: #1F2C36;
+}
+
+/* Overrides co-base.css */
+
+html * {
+    font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+#banner-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.75em 1em;
+    margin: 0;
+    box-shadow: 0 0 3px #666;
+    background-color: #1F2C36;
+}
+
+#banner-top h3 {
+    font-size: 1.34em;
+}
+
+#banner-top a {
+    color: #F1A52C;
+}
+
+#banner {
+    display: none;
+}
+
+table.common-table tr:nth-child(even) td,
+.line1 {
+    background-color: #e7e8ea;
+}
